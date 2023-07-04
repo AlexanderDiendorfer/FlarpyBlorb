@@ -9,6 +9,7 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
+    public AudioSource scoreSFX;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
@@ -18,6 +19,7 @@ public class LogicScript : MonoBehaviour
             Debug.Log("Triggered");
             playerScore += scoreToAdd;
             scoreText.text = playerScore.ToString();
+            scoreSFX.Play();
         }
 
     }
