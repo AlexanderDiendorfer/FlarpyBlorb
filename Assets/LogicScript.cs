@@ -13,9 +13,13 @@ public class LogicScript : MonoBehaviour
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
-        Debug.Log("Triggered");
-        playerScore += scoreToAdd;
-        scoreText.text = playerScore.ToString();
+        if (!gameOverScreen.activeSelf)
+        {
+            Debug.Log("Triggered");
+            playerScore += scoreToAdd;
+            scoreText.text = playerScore.ToString();
+        }
+
     }
 
     public void restartGame()
