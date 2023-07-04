@@ -10,6 +10,7 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public AudioSource scoreSFX;
+    public AudioSource dieSFX;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
@@ -31,6 +32,7 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
+        dieSFX.Play();
         gameOverScreen.SetActive(true);
     }
 }
